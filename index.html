@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <title>StarsLink</title>
     <script>
+        var index = 1;
+        function nextSlice() {
+            const prevIndex = index === 1 ? 7 : index - 1;
+            rotatePie('slice-'+ index, 'slice-'+ prevIndex);
+            index = index === 7 ? 1 : index + 1;
+        }
         function rotatePie(slice, prevSlice) {
             var currentSliceElement = document.querySelector('.'+ slice);
             var prevSliceElement = document.querySelector('.'+ prevSlice);
@@ -138,7 +144,6 @@
             height: 500px;
             position: relative;
             border-radius: 500px;
-            background-color: rgb(136, 143, 255);
             transform: rotate(-25deg);
             background: #fff;
         }
@@ -304,63 +309,19 @@
         }
 
         .pop {
-            top: -30px;
-            left: 15px;
-            animation: popUp 1s linear;
+            /*top: -30px;*/
+            /*left: 15px;*/
+            /*animation: popUp 1s linear;*/
         }
 
         .inner .text {
             font-size: 18px;
             position: absolute;
-        }
-
-        .slice-1 .inner .text {
             top: 60px;
-            left: 118px;
-            width: 100px;
+            left: 85px;
+            text-align: center;
+            width: 155px;
             transform: rotate(333deg);
-        }
-
-        .slice-2 .inner .text {
-            top: 75px;
-            left: 135px;
-            width: 100px;
-            transform: rotate(281deg);
-        }
-
-        .slice-3 .inner .text {
-            top: 60px;
-            left: 105px;
-            width: 100px;
-            transform: rotate(230deg);
-        }
-
-        .slice-4 .inner .text {
-            top: 60px;
-            left: 120px;
-            width: 100px;
-            transform: rotate(178deg);
-        }
-
-        .slice-5 .inner .text {
-            top: 70px;
-            left: 137px;
-            width: 100px;
-            transform: rotate(128deg);
-        }
-
-        .slice-6 .inner .text {
-            top: 90px;
-            left: 130px;
-            width: 100px;
-            transform: rotate(76deg);
-        }
-
-        .slice-7 .inner .text {
-            top: 80px;
-            left: 130px;
-            width: 100px;
-            transform: rotate(24deg);
         }
 
         @keyframes popUp {
@@ -376,7 +337,7 @@
 
         @keyframes toSlice1 {
             to {
-               transform: rotate(-25deg);
+                transform: rotate(-25deg);
             }
         }
 
@@ -417,7 +378,7 @@
     </style>
 </head>
 <body>
-    <div class="main-container">
+<div class="main-container">
     <div class="left">
         <h1 class="title">Take on the circle of partnership!</h1>
         <div class="content">
@@ -452,32 +413,60 @@
             </div>
         </div>
     </div>
-        <div class="right">
-            <div class="pie">
-                <div class="slice-1 pop">
-                    <div class="inner"></div>
+    <div class="right">
+        <div class="pie" onclick="nextSlice()">
+            <div class="slice-1 pop">
+                <div class="inner">
+                    <span class="text">
+                        Shared Goals
+                    </span>
                 </div>
-                <div class="slice-2">
-                    <div class="inner"></div>
+            </div>
+            <div class="slice-2">
+                <div class="inner">
+                    <span class="text">
+                        Clear Roles
+                    </span>
                 </div>
-                <div class="slice-3">
-                    <div class="inner"></div>
+            </div>
+            <div class="slice-3">
+                <div class="inner">
+                    <span class="text">
+                        Decision Making
+                    </span>
                 </div>
-                <div class="slice-4">
-                    <div class="inner"></div>
+            </div>
+            <div class="slice-4">
+                <div class="inner">
+                    <span class="text">
+                         Managing Partnership Routines
+                    </span>
                 </div>
-                <div class="slice-5">
-                    <div class="inner"></div>
+            </div>
+            <div class="slice-5">
+                <div class="inner">
+                    <span class="text">
+                         Open and Honest Communication
+                    </span>
                 </div>
-                <div class="slice-6">
-                    <div class="inner"></div>
+            </div>
+            <div class="slice-6">
+                <div class="inner">
+                    <span class="text">
+                         Mutual Respect
+                    </span>
                 </div>
-                <div class="slice-7">
-                    <div class="inner"></div>
+            </div>
+            <div class="slice-7">
+                <div class="inner">
+                    <span class="text">
+                        Shared Commitment
+                    </span>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 </body>
 </html>
