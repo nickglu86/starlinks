@@ -4,27 +4,57 @@
     <meta charset="UTF-8">
     <title>StarsLink</title>
     <script>
-        function rotatePie(slice) {
+        function rotatePie(slice, prevSlice) {
+            var currentSliceElement = document.querySelector('.'+ slice);
+            var prevSliceElement = document.querySelector('.'+ prevSlice);
+            prevSliceElement.className = prevSlice;
+            currentSliceElement.className = slice + ' pop';
+            var pie = document.querySelector('.pie');
             switch (slice) {
                 case 'slice-1':
+                    pie.style.animation = 'toSlice1 1s linear';
                     break;
                 case 'slice-2':
+                    pie.style.animation = 'toSlice2 1s linear';
+                    setTimeout(function(){
+                        pie.style.transform = 'rotate(-82deg)';
+                    },1000);
                     break;
                 case 'slice-3':
+                    pie.style.animation = 'toSlice3 1s linear';
+                    setTimeout(function(){
+                        pie.style.transform = 'rotate(-128deg)';
+                    },1000);
                     break;
                 case 'slice-4':
+                    pie.style.animation = 'toSlice4 1s linear';
+                    setTimeout(function(){
+                        pie.style.transform = 'rotate(-176deg)';
+                    },1000);
                     break;
                 case 'slice-5':
+                    pie.style.animation = 'toSlice5 1s linear';
+                    setTimeout(function(){
+                        pie.style.transform = 'rotate(-234deg)';
+                    },1000);
                     break;
                 case 'slice-6':
+                    pie.style.animation = 'toSlice6 1s linear';
+                    setTimeout(function(){
+                        pie.style.transform = 'rotate(-282deg)';
+                    },1000);
                     break;
                 case 'slice-7':
+                    pie.style.animation = 'toSlice7 1s linear';
+                    setTimeout(function(){
+                        pie.style.transform = 'rotate(-333deg)';
+                    },1000);
                     break;
             }
         }
     </script>
     <style>
-        body{
+        body {
             background-color: white;
             font-family: Calibri, 'Trebuchet MS', sans-serif ;
             background-image: url("https://test.starlinks.co/assets/img/STARLINKS_MYFEEDBACK_UI.png");
@@ -47,7 +77,8 @@
 
 
         }
-        .left, .right{
+
+        .left, .right {
             display: inline-block;
             vertical-align: top;
             padding: 20px 10px;
@@ -108,7 +139,7 @@
             position: relative;
             border-radius: 500px;
             background-color: rgb(136, 143, 255);
-            transform: rotate(-24deg);
+            transform: rotate(-25deg);
             background: #fff;
         }
 
@@ -278,9 +309,58 @@
             animation: popUp 1s linear;
         }
 
-        .inner .text{
-            font-size:15px;
-            color:#fff;
+        .inner .text {
+            font-size: 18px;
+            position: absolute;
+        }
+
+        .slice-1 .inner .text {
+            top: 60px;
+            left: 118px;
+            width: 100px;
+            transform: rotate(333deg);
+        }
+
+        .slice-2 .inner .text {
+            top: 75px;
+            left: 135px;
+            width: 100px;
+            transform: rotate(281deg);
+        }
+
+        .slice-3 .inner .text {
+            top: 60px;
+            left: 105px;
+            width: 100px;
+            transform: rotate(230deg);
+        }
+
+        .slice-4 .inner .text {
+            top: 60px;
+            left: 120px;
+            width: 100px;
+            transform: rotate(178deg);
+        }
+
+        .slice-5 .inner .text {
+            top: 70px;
+            left: 137px;
+            width: 100px;
+            transform: rotate(128deg);
+        }
+
+        .slice-6 .inner .text {
+            top: 90px;
+            left: 130px;
+            width: 100px;
+            transform: rotate(76deg);
+        }
+
+        .slice-7 .inner .text {
+            top: 80px;
+            left: 130px;
+            width: 100px;
+            transform: rotate(24deg);
         }
 
         @keyframes popUp {
@@ -291,6 +371,47 @@
             100% {
                 top: -30px;
                 left: 15px;
+            }
+        }
+
+        @keyframes toSlice1 {
+            to {
+               transform: rotate(-25deg);
+            }
+        }
+
+        @keyframes toSlice2 {
+            to {
+                transform: rotate(-82deg);
+            }
+        }
+
+        @keyframes toSlice3 {
+            to {
+                transform: rotate(-128deg);
+            }
+        }
+        @keyframes toSlice4 {
+            to {
+                transform: rotate(-176deg);
+            }
+        }
+
+        @keyframes toSlice5 {
+            to {
+                transform: rotate(-234deg);
+            }
+        }
+
+        @keyframes toSlice6 {
+            to {
+                transform: rotate(-282deg);
+            }
+        }
+
+        @keyframes toSlice7 {
+            to {
+                transform: rotate(-333deg);
             }
         }
     </style>
