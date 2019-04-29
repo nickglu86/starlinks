@@ -35,10 +35,15 @@
         .main-container{
             min-width: 1000px;
             max-width: 1200px;
-            width: 90%;
-            height: 100vh;
-            margin:  0 auto;
+            width: 80%;
+            height: 90vh;
+            margin: 80px auto;
             display: block;
+            background: #fff;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;
+            padding: 12px 15px;
+            box-shadow: 0 9px 14px 0px rgba(0, 0, 0, 0.35);
 
 
         }
@@ -55,15 +60,22 @@
             width: 58%;
         }
         .title{
-            font-family:    Calibri, 'Trebuchet MS', sans-serif ;
+            font-family: Calibri, 'Trebuchet MS', sans-serif;
             font-size: 25px;
             font-weight: 700;
-            color: #000;
+            color: #dc1a22;
+            /* color: #000; */
+            overflow: hidden;
+            white-space: nowrap;
         }
-
+        .desc{
+            padding: 10px 0 20px;
+            font-size: 17px;
+        }
         .color{
-            height: 70px;
-            width: 70px;
+            height: 30px;
+            width: 30px;
+            display: inline-block;
         }
         .red{
             background-color: red;
@@ -272,7 +284,7 @@
 <body>
     <div class="main-container">
     <div class="left">
-        <div class="title">Take on the circle of partnership!</div>
+        <h1 class="title">Take on the circle of partnership!</h1>
         <div class="content">
             <div class="desc">
                 For each of the partnership characteristics in the circle indicate the degree to which you think the description fits in this partnership with XXXX.
@@ -299,9 +311,6 @@
                         Green - Yep, this is us!
                     </span>
                 </div>
-
-
-
             </div>
         </div>
     </div>
