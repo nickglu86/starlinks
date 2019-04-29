@@ -2,7 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> StarsLink </title>
+    <title>StarsLink</title>
+    <script>
+        function rotatePie(slice) {
+            switch (slice) {
+                case 'slice-1':
+                    break;
+                case 'slice-2':
+                    break;
+                case 'slice-3':
+                    break;
+                case 'slice-4':
+                    break;
+                case 'slice-5':
+                    break;
+                case 'slice-6':
+                    break;
+                case 'slice-7':
+                    break;
+            }
+        }
+    </script>
     <style>
         body{
             background-color: white;
@@ -32,12 +52,16 @@
         .right{
         }
         .pie {
+            top: 100px;
             width: 500px;
             height: 500px;
             position: relative;
             border-radius: 500px;
             background-color: rgb(136, 143, 255);
+            transform: rotate(-24deg);
+            background: #fff;
         }
+
         .slice-1 {
             position: absolute;
             top: 0px;
@@ -47,8 +71,9 @@
             border-radius: 500px;
             clip: rect(0px, 500px, 500px, 250px);
         }
+
         .slice-1 .inner {
-            background-color: rgb(68, 79, 255);
+            background-color: #f89f6d;
             position: absolute;
             top: 0px;
             left: 0px;
@@ -58,6 +83,7 @@
             clip: rect(0px, 250px, 500px, 0px);
             transform: rotate(51.3339deg);
         }
+
         .slice-2 {
             position: absolute;
             top: 0px;
@@ -68,8 +94,9 @@
             clip: rect(0px, 500px, 500px, 250px);
             transform: rotate(51.3339deg);
         }
+
         .slice-2 .inner {
-            background-color: rgb(0, 249, 0);
+            background-color: #aec9e0;
             position: absolute;
             top: 0px;
             left: 0px;
@@ -79,6 +106,7 @@
             clip: rect(0px, 250px, 500px, 0px);
             transform: rotate(51.463deg);
         }
+
         .slice-3 {
             position: absolute;
             top: 0px;
@@ -89,8 +117,9 @@
             clip: rect(0px, 500px, 500px, 250px);
             transform: rotate(102.797deg);
         }
+
         .slice-3 .inner {
-            background-color: rgb(255, 147, 0);
+            background-color: #9ed294;
             position: absolute;
             top: 0px;
             left: 0px;
@@ -100,6 +129,7 @@
             clip: rect(0px, 250px, 500px, 0px);
             transform: rotate(51.4752deg);
         }
+
         .slice-4 {
             position: absolute;
             top: 0px;
@@ -110,8 +140,9 @@
             clip: rect(0px, 500px, 500px, 250px);
             transform: rotate(154.272deg);
         }
-        .slice-4.inner {
-            background-color: rgb(255, 64, 255);
+
+        .slice-4 .inner {
+            background-color: #abdde8;
             position: absolute;
             top: 0px;
             left: 0px;
@@ -121,6 +152,7 @@
             clip: rect(0px, 250px, 500px, 0px);
             transform: rotate(51.32deg);
         }
+
         .slice-5 {
             position: absolute;
             top: 0px;
@@ -131,8 +163,9 @@
             clip: rect(0px, 500px, 500px, 250px);
             transform: rotate(205.592deg);
         }
+
         .slice-5 .inner {
-            background-color: rgb(255, 38, 0);
+            background-color: #e68b8b;
             position: absolute;
             top: 0px;
             left: 0px;
@@ -142,6 +175,7 @@
             clip: rect(0px, 250px, 500px, 0px);
             transform: rotate(51.456deg);
         }
+
         .slice-6 {
             position: absolute;
             top: 0px;
@@ -152,8 +186,9 @@
             clip: rect(0px, 500px, 500px, 250px);
             transform: rotate(257.048deg);
         }
+
         .slice-6 .inner {
-            background-color: rgb(255, 251, 0);
+            background-color: #80a7d0;
             position: absolute;
             top: 0px;
             left: 0px;
@@ -163,6 +198,7 @@
             clip: rect(0px, 250px, 500px, 0px);
             transform: rotate(51.476deg);
         }
+
         .slice-7 {
             position: absolute;
             top: 0px;
@@ -173,8 +209,9 @@
             clip: rect(0px, 500px, 500px, 250px);
             transform: rotate(308.524deg);
         }
+
         .slice-7 .inner {
-            background-color: rgb(148, 33, 146);
+            background-color: #e7cf7f;
             position: absolute;
             top: 0px;
             left: 0px;
@@ -183,7 +220,28 @@
             border-radius: 500px;
             clip: rect(0px, 250px, 500px, 0px);
             transform: rotate(51.476deg);
+        }
 
+        .pop {
+            top: -30px;
+            left: 15px;
+            animation: popUp 1s linear;
+        }
+
+        .inner .text{
+            font-size:15px;
+            color:#fff;
+        }
+
+        @keyframes popUp {
+            0% {
+                top: 0px;
+                left: 0px;
+            }
+            100% {
+                top: -30px;
+                left: 15px;
+            }
         }
     </style>
 </head>
@@ -194,7 +252,7 @@
         </div>
         <div class="right">
             <div class="pie">
-                <div class="slice-1">
+                <div class="slice-1 pop">
                     <div class="inner"></div>
                 </div>
                 <div class="slice-2">
@@ -217,6 +275,5 @@
                   </div>
              </div>
         </div>
-
 </body>
 </html>
