@@ -26,12 +26,12 @@
     <style>
         body{
             background-color: white;
-            font-family:    Calibri, 'Trebuchet MS', sans-serif ;
+            font-family: Calibri, 'Trebuchet MS', sans-serif ;
         }
         .main-container{
-            min-width: 300px;
+            min-width: 600px;
             max-width: 1000px;
-            width: 85%;
+            width: 90%;
             margin:  0 auto;
             height: 500px;
             background-color: cadetblue;
@@ -41,15 +41,34 @@
         }
         .left, .right{
             display: inline-block;
-            position: relative;
-            height: 100%;
+            vertical-align: top;
 
         }
         .left{
                 width: 31%;
         }
+        .title{
+            font-family:    Calibri, 'Trebuchet MS', sans-serif ;
+            font-size: 25px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .color{
+            height: 70px;
+            width: 70px;
+        }
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .green{
+            background-color: green;
+        }
         .right{
-                width: 68%;
+                width: 64%;
         }
         .pie {
             top: 100px;
@@ -247,7 +266,40 @@
 </head>
 <body>
     <div class="main-container">
-    <div class="left"></div>
+    <div class="left">
+        <div class="title">Take on the circle of partnership!</div>
+        <div class="content">
+            <div class="desc">
+                For each of the partnership characteristics in the circle indicate the degree to which you think the description fits in this partnership with XXXX.
+            </div>
+            <div class="colors-items">
+                <div class="color-item">
+                    <span class="color red">
+                    </span>
+                    <span class="clr-desc">
+                        Red - Not really describing this partnership
+                    </span>
+                </div>
+                <div class="color-item">
+                    <span class="color orange">
+                    </span>
+                    <span class="clr-desc">
+                          Orange - We are doing ok overall, but there is still a need for improvement
+                    </span>
+                </div>
+                <div class="color-item">
+                    <span class="color green">
+                    </span>
+                    <span class="clr-desc">
+                        Green - Yep, this is us!
+                    </span>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
         <div class="right">
             <div class="pie">
                 <div class="slice-1 pop">
