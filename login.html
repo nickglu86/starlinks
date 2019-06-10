@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/home-page-style.css">
     <style>
         html {
             height: 100%;
@@ -30,7 +31,9 @@
             flex-direction: column;
             margin: 15px auto 0 auto;
         }
-
+        .home-page-container{
+            display: none;
+        }
         .ribbon {
             color: #DDF6F5;
             background-color: #15283A;
@@ -119,6 +122,16 @@
             -webkit-align-items: center;
             align-items: center;
         }
+        .begin-journey {
+            background-color: #06306a;
+            color: #fff;
+            height: 50px;
+            width: 86%;
+            margin: 0 auto;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 10px;
+        }
 
         @keyframes shake {
             10%, 90% {
@@ -187,6 +200,14 @@
         function clearErrors() {
             document.querySelector('#password').classList.remove('error');
         }
+        function go2MainPage() {
+            var postLoginElem = document.querySelectorAll('.post-login-container')[0];
+            postLoginElem.style.display = 'none';
+
+            var homePage = document.querySelectorAll('.home-page-container')[0];
+            homePage.style.transition = "all 2s";
+            homePage.style.display = 'block';
+        }
     </script>
 </head>
 <body>
@@ -236,9 +257,63 @@
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
+            <div class="begin-journey" onclick="go2MainPage();"> Let the Journey Begin!</div>
         </div>
     </div>
 
+</div>
+
+<div class="home-page-container">
+    <div class="header">
+        <div class="profile-info">
+            <div class="stars info">
+                <div class="count">3</div>
+                <div class="label">stars</div>
+            </div>
+            <div class="badges info">
+                <div class="count">7</div>
+                <div class="label">badges</div>
+            </div>
+        </div>
+        <div class="profile-icon">
+            <img src="mobile-assets/47.jpg">
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="cover"></div>
+        <div class="progress">
+            <div class="prog-btns">
+                <div class="prog-btn-wrp">
+                    <div class="prob-lbl"></div>
+                    <button class="prog-btn wkly-chlg">Weekly challenge: 1000 points</button>
+                </div>
+                <div class="prog-btn-wrp">
+                    <div class="prob-lbl">Opportunity closes in 02 hr 15 min</div>
+                    <button class="prog-btn bonus">5 minute bonus!</button>
+                </div>
+            </div>
+            <div class="month-progress">
+                <div class="progress-label">This Month Progress</div>
+                <div class="progress-bar">
+                    <div class="fill">
+
+                    </div>
+                    <div class="icon">
+                        <img src="mobile-assets/ICONS_08.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="features">
+            <div class="feature"><img src="mobile-assets/1.jpg"></div>
+            <div class="feature car"><img src=" mobile-assets/2.png"></div>
+            <div class="feature"><img src="mobile-assets/3.png"></div>
+            <div class="feature"><img src="mobile-assets/4.png"></div>
+            <div class="feature"><img src="mobile-assets/5.png"></div>
+            <div class="feature"><img src="mobile-assets/6.png"></div>
+
+        </div>
+    </div>
 </div>
 
 <script src="./js/swiper.min.js"></script>
