@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Source Sans Pro', sans-serif;;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 21px;
+            color: #15283A;
+        }
+
+        .login-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-login-container {
+            display: none;
+            flex-direction: column;
+            margin: 15px auto 0 auto;
+        }
+
+        .ribbon {
+            color: #DDF6F5;
+            background-color: #15283A;
+            height: 62px;
+            text-align: center;
+            padding: 5px 6px;
+            display: flex;
+            align-items: center;
+            font-size: 19px;
+            box-shadow: 6px 6px 6px 0px rgba(133,131,133,0.65);
+            margin: 24px 50px 0 0;
+            border: 1px solid #15283A;
+        }
+
+        .title {
+            margin: 20px;
+        }
+
+        .login-img {
+            max-height: 281px;
+        }
+
+        .input-top {
+            text-align: center;
+        }
+
+        input[type="email"], input[type="password"] {
+            width: 230px;
+            border: 1px solid gray;
+            margin: 4px auto;
+            height: 28px;
+            border-radius: 7px;
+            padding: 0 10px;
+            outline: none;
+        }
+        .email.error, .password.error {
+            border-color: darkred;
+        }
+
+        .password.error{
+            animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+        }
+        .password-container, .email-container, .message-container{
+            display: flex;
+            flex-direction: column;
+        }
+        .password-container {
+            display: none;
+        }
+        .input-bottom {
+            text-align: center;
+            font-size: 12px;
+            font-family: Calibri;
+            width: 200px;
+            margin: 4px auto;
+            line-height: 13px;
+        }
+
+        .hello-name, .message {
+            text-align: center;
+        }
+
+        .message {
+            margin: 80px 0px;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        @keyframes shake {
+            10%, 90% {
+                transform: translate3d(-1px, 0, 0);
+            }
+
+            20%, 80% {
+                transform: translate3d(2px, 0, 0);
+            }
+
+            30%, 50%, 70% {
+                transform: translate3d(-4px, 0, 0);
+            }
+
+            40%, 60% {
+                transform: translate3d(4px, 0, 0);
+            }
+        }
+    </style>
+    <script>
+        function validateEmail() {
+            var emailElem = document.querySelector('#email');
+            var email = emailElem.value;
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            var isValid = re.test(String(email).toLowerCase());
+            if(!isValid) {
+                emailElem.classList.add('error');
+            } else {
+                emailElem.classList.remove('error');
+            }
+            return isValid;
+        }
+        function checkEmail() {
+            var isValidEmail = validateEmail();
+            if(isValidEmail) {
+                var emailElem = document.querySelectorAll('.email-container')[0];
+                var passwordElem = document.querySelectorAll('.password-container')[0];
+                emailElem.style.display ='none';
+                passwordElem.style.display ='flex';
+            }
+        }
+        function login() {
+            var isValidEmail = validateEmail();
+            if(isValidEmail) {
+                var email = document.querySelector('#email').value;
+                var passwordElem = document.querySelector('#password');
+                var password = passwordElem.value;
+                if(password === '123456') {
+                    console.log({ email, password });
+                    passwordElem.classList.remove('error');
+                    postLogin();
+                } else {
+                    passwordElem.classList.add('error');
+                }
+            }
+        }
+        function postLogin() {
+            var loginElem = document.querySelectorAll('.login-container')[0];
+            loginElem.style.display = 'none';
+
+            var postLoginElem = document.querySelectorAll('.post-login-container')[0];
+            postLoginElem.style.display = 'flex';
+
+        }
+
+        function clearErrors() {
+            document.querySelector('#password').classList.remove('error');
+        }
+    </script>
+</head>
+<body>
+<div class="login-container">
+    <div class="ribbon">
+        A personalized workout for building your impact and personal brand!
+    </div>
+    <div class="title">
+        Simple personalized challenges designed to boost your current success and open up future opportunities!
+    </div>
+    <img src="mobile-assets/pietrasiak_data_center2.png" class="login-img"/>
+    <div class="email-container">
+        <label class="input-top">Enter your work e-mail to get in</label>
+        <input id="email" type="email" class="email" onkeypress="validateEmail()" onchange="checkEmail()"/>
+        <label class="input-bottom">By joining StarLinks you agree to your terms of use and privacy policy</label>
+    </div>
+
+    <div class="password-container">
+        <label class="input-top">Set Your Password</label>
+        <input id="password" type="password" class="password" onchange="login()" onkeypress="clearErrors()"/>
+        <label class="input-bottom">
+            With StarLinks your data is yours alone!
+            No one outside of StarLinks will have access to your journey but you.</label>
+    </div>
+
+</div>
+
+<div class="post-login-container">
+    <img src="mobile-assets/frame_2.1_2x.png" class="login-img"/>
+
+    <div class="message-container">
+        <label class="hello-name">Hi Dana!</label>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide message">
+                    Welcome to your personalized journey for growing your impact, brand and career opportunities.
+                </div>
+                <div class="swiper-slide message">
+                    In this journey you will get the opportunity to leverage organizational data for building the business of you!
+                </div>
+                <div class="swiper-slide message">
+                    Each week you will recieve one small developmental challenge to keep your growth and career on a routine workout.
+                </div>
+                <div class="swiper-slide message">
+                    Complete the challenge and earn points which you can turn into numerous perks!
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="./js/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    });
+</script>
+</body>
+</html>
