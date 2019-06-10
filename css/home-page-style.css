@@ -174,3 +174,45 @@
 .car{
     margin-top: 15px;
 }
+
+
+.home-page-content-wrap{
+    position: relative;
+}
+
+.home-page-content{
+    position: absolute;
+}
+.mask{
+    position: absolute;
+    z-index: 21212222;
+    height: 60vh;
+    width: 100%;
+    background-color: rgba(216,238,235, 0.65);
+}
+
+.message-main{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 40px 8px;
+    background: #fbf1c0;
+    margin-top: 10vh;
+    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.msg-icons {
+    margin-top: 20px;
+}
+
+.msg-icon{
+    width: 63px;
+    height: auto;
+    margin: 0 5px;
+}
+
+span.txt-msg {
+    text-transform: uppercase;
+    font-family: open;
+}
