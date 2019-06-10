@@ -1,0 +1,167 @@
+/* Fonts */
+@font-face {
+    font-family: 'Bahnschrift Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bahnschrift Regular'), url('../fonts/bahnschrift/BAHNSCHRIFT 1.woff') format('woff');
+}
+
+
+
+/* General */
+*{
+    box-sizing: border-box;
+    font-family: 'Bahnschrift Regular';
+    color: #8a8a8a;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+
+.header{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: 85px;
+
+
+}
+
+.profile-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.profile-icon img{
+    border-radius: 30px;
+    height: 60px;
+}
+.info {
+    position: relative;
+    margin: 5px 0;
+    width: 95px;
+    font-size: 13px;
+    color: #00000099;
+    background-color: rgba(250, 226, 157, 0.7);
+    border-radius: 13px;
+    height: 30px;
+    /* text-align: left; */
+    padding: 0 7px;
+    line-height: 23px;
+    box-sizing: border-box;
+
+}
+.count {
+    height: 23px;
+    width: 23px;
+    border-radius: 21px;
+    line-height: 23px;
+    background: #ffb100;
+    position: absolute;
+    left: 0;
+    text-align: center;
+}
+.label{
+    margin-left: 29px;
+    font-size: 12px;
+}
+
+.cover {
+    min-height: 300px;
+    height: 40vh;
+    background-image: url(../mobile-assets/landscape.jpg);
+    background-size: cover;
+
+    box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.69);
+}
+.progress{
+    height: 20vh;
+    width: 100%;
+    box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.69);
+
+}
+.prog-btns{
+    display: flex;
+    justify-content: space-evenly;
+}
+.prog-btn-wrp {
+    width: 50%;
+    margin: 0 20px;
+    padding-top: 10px;
+    text-align: center;
+}
+.prog-btn{
+    width: 100%;
+    border-radius: 12px;
+    height: 26px;
+    margin: 5px 0;
+}
+.prob-lbl{
+    color: #245F22;
+    font-size: 11px;
+    height: 13px;
+}
+
+.wkly-chlg {
+    color: #CC3657;
+    background-color: rgba(204,54,87, 0.26);
+    border: 1px solid #CC3657;
+}
+.bonus{
+    color: #245F22;
+    background-color: rgba(36,95,34, 0.26);
+    border: 1px solid #245F22;
+}
+.progress-label{
+    text-align: center;
+    width: 100%;
+    margin: 15px 0 22px;
+    font-size: 14px;
+}
+.progress-bar{
+
+    border-radius: 5px;
+    width: 86%;
+    height: 10px;
+    margin: 0 auto;
+    border: 1px solid #99cbc9;
+    position: relative;
+}
+.fill{
+    width: 20%;
+    background-color: #99cbc9;
+    height: 8px;
+}
+
+.icon{
+    position: absolute;
+    left: 15%;
+    top: -22px;
+}
+
+.icon img{
+    height: 40px;
+}
+
+.features{
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.feature{
+    width: 26%;
+}
+.feature img{
+    width: 83px;
+}
+.car{
+    margin-top: 15px;
+}
